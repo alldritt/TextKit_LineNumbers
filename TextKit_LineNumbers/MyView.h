@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MyView.h
 //  TextKit_LineNumbers
 //
 //  Created by Mark Alldritt on 2013-10-11.
@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyView.h"
+#import "LineNumberTextView.h"
 
 
-@interface ViewController : UIViewController
+@interface MyView : UIView
 
-@property (assign, nonatomic) IBOutlet MyView* myView;
+@property (nonatomic) LineNumberTextView* textView;
 
 @end

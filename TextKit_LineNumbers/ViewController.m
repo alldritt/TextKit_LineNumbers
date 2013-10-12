@@ -14,16 +14,14 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    //  Account for the transparent iOS7 sstatus bar
+    NSUInteger navBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+    UIEdgeInsets insets = self.myView.textView.contentInset;
+    insets.top += navBarHeight;
+    self.myView.textView.contentInset = insets;
 }
 
 @end

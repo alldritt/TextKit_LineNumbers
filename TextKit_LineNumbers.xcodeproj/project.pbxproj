@@ -17,22 +17,11 @@
 		A54FEA911808FD7F004BD309 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54FEA8F1808FD7F004BD309 /* Main_iPad.storyboard */; };
 		A54FEA941808FD7F004BD309 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54FEA931808FD7F004BD309 /* ViewController.m */; };
 		A54FEA961808FD7F004BD309 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54FEA951808FD7F004BD309 /* Images.xcassets */; };
-		A54FEA9D1808FD7F004BD309 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54FEA9C1808FD7F004BD309 /* XCTest.framework */; };
-		A54FEA9E1808FD7F004BD309 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54FEA7A1808FD7F004BD309 /* Foundation.framework */; };
-		A54FEA9F1808FD7F004BD309 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54FEA7E1808FD7F004BD309 /* UIKit.framework */; };
-		A54FEAA71808FD7F004BD309 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A54FEAA51808FD7F004BD309 /* InfoPlist.strings */; };
-		A54FEAA91808FD7F004BD309 /* TextKit_LineNumbersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A54FEAA81808FD7F004BD309 /* TextKit_LineNumbersTests.m */; };
+		A54FEAB41808FDBA004BD309 /* LineNumberTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54FEAB31808FDBA004BD309 /* LineNumberTextView.m */; };
+		A54FEAB71808FDD1004BD309 /* LineNumberLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A54FEAB61808FDD1004BD309 /* LineNumberLayoutManager.m */; };
+		A54FEABB1809080E004BD309 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54FEABA1809080E004BD309 /* MyView.m */; };
+		A54FEABD18090DB2004BD309 /* Sample.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A54FEABC18090DB2004BD309 /* Sample.rtf */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A54FEAA01808FD7F004BD309 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A54FEA6F1808FD7F004BD309 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A54FEA761808FD7F004BD309;
-			remoteInfo = TextKit_LineNumbers;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A54FEA771808FD7F004BD309 /* TextKit_LineNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextKit_LineNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,11 +39,14 @@
 		A54FEA921808FD7F004BD309 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A54FEA931808FD7F004BD309 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A54FEA951808FD7F004BD309 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A54FEA9B1808FD7F004BD309 /* TextKit_LineNumbersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextKit_LineNumbersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54FEA9C1808FD7F004BD309 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A54FEAA41808FD7F004BD309 /* TextKit_LineNumbersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TextKit_LineNumbersTests-Info.plist"; sourceTree = "<group>"; };
-		A54FEAA61808FD7F004BD309 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A54FEAA81808FD7F004BD309 /* TextKit_LineNumbersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextKit_LineNumbersTests.m; sourceTree = "<group>"; };
+		A54FEAB21808FDBA004BD309 /* LineNumberTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineNumberTextView.h; sourceTree = "<group>"; };
+		A54FEAB31808FDBA004BD309 /* LineNumberTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineNumberTextView.m; sourceTree = "<group>"; };
+		A54FEAB51808FDD1004BD309 /* LineNumberLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineNumberLayoutManager.h; sourceTree = "<group>"; };
+		A54FEAB61808FDD1004BD309 /* LineNumberLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineNumberLayoutManager.m; sourceTree = "<group>"; };
+		A54FEAB91809080E004BD309 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		A54FEABA1809080E004BD309 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		A54FEABC18090DB2004BD309 /* Sample.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Sample.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,16 +60,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A54FEA981808FD7F004BD309 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A54FEA9D1808FD7F004BD309 /* XCTest.framework in Frameworks */,
-				A54FEA9F1808FD7F004BD309 /* UIKit.framework in Frameworks */,
-				A54FEA9E1808FD7F004BD309 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				A54FEA801808FD7F004BD309 /* TextKit_LineNumbers */,
-				A54FEAA21808FD7F004BD309 /* TextKit_LineNumbersTests */,
 				A54FEA791808FD7F004BD309 /* Frameworks */,
 				A54FEA781808FD7F004BD309 /* Products */,
 			);
@@ -95,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				A54FEA771808FD7F004BD309 /* TextKit_LineNumbers.app */,
-				A54FEA9B1808FD7F004BD309 /* TextKit_LineNumbersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,12 +94,19 @@
 		A54FEA801808FD7F004BD309 /* TextKit_LineNumbers */ = {
 			isa = PBXGroup;
 			children = (
-				A54FEA891808FD7F004BD309 /* AppDelegate.h */,
-				A54FEA8A1808FD7F004BD309 /* AppDelegate.m */,
 				A54FEA8C1808FD7F004BD309 /* Main_iPhone.storyboard */,
 				A54FEA8F1808FD7F004BD309 /* Main_iPad.storyboard */,
+				A54FEA891808FD7F004BD309 /* AppDelegate.h */,
+				A54FEA8A1808FD7F004BD309 /* AppDelegate.m */,
 				A54FEA921808FD7F004BD309 /* ViewController.h */,
 				A54FEA931808FD7F004BD309 /* ViewController.m */,
+				A54FEAB91809080E004BD309 /* MyView.h */,
+				A54FEABA1809080E004BD309 /* MyView.m */,
+				A54FEAB21808FDBA004BD309 /* LineNumberTextView.h */,
+				A54FEAB31808FDBA004BD309 /* LineNumberTextView.m */,
+				A54FEAB51808FDD1004BD309 /* LineNumberLayoutManager.h */,
+				A54FEAB61808FDD1004BD309 /* LineNumberLayoutManager.m */,
+				A54FEABC18090DB2004BD309 /* Sample.rtf */,
 				A54FEA951808FD7F004BD309 /* Images.xcassets */,
 				A54FEA811808FD7F004BD309 /* Supporting Files */,
 			);
@@ -133,24 +120,6 @@
 				A54FEA831808FD7F004BD309 /* InfoPlist.strings */,
 				A54FEA861808FD7F004BD309 /* main.m */,
 				A54FEA881808FD7F004BD309 /* TextKit_LineNumbers-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A54FEAA21808FD7F004BD309 /* TextKit_LineNumbersTests */ = {
-			isa = PBXGroup;
-			children = (
-				A54FEAA81808FD7F004BD309 /* TextKit_LineNumbersTests.m */,
-				A54FEAA31808FD7F004BD309 /* Supporting Files */,
-			);
-			path = TextKit_LineNumbersTests;
-			sourceTree = "<group>";
-		};
-		A54FEAA31808FD7F004BD309 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A54FEAA41808FD7F004BD309 /* TextKit_LineNumbersTests-Info.plist */,
-				A54FEAA51808FD7F004BD309 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -175,24 +144,6 @@
 			productReference = A54FEA771808FD7F004BD309 /* TextKit_LineNumbers.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A54FEA9A1808FD7F004BD309 /* TextKit_LineNumbersTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A54FEAAF1808FD7F004BD309 /* Build configuration list for PBXNativeTarget "TextKit_LineNumbersTests" */;
-			buildPhases = (
-				A54FEA971808FD7F004BD309 /* Sources */,
-				A54FEA981808FD7F004BD309 /* Frameworks */,
-				A54FEA991808FD7F004BD309 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A54FEAA11808FD7F004BD309 /* PBXTargetDependency */,
-			);
-			name = TextKit_LineNumbersTests;
-			productName = TextKit_LineNumbersTests;
-			productReference = A54FEA9B1808FD7F004BD309 /* TextKit_LineNumbersTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -201,11 +152,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Late Night Software Ltd.";
-				TargetAttributes = {
-					A54FEA9A1808FD7F004BD309 = {
-						TestTargetID = A54FEA761808FD7F004BD309;
-					};
-				};
 			};
 			buildConfigurationList = A54FEA721808FD7F004BD309 /* Build configuration list for PBXProject "TextKit_LineNumbers" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -221,7 +167,6 @@
 			projectRoot = "";
 			targets = (
 				A54FEA761808FD7F004BD309 /* TextKit_LineNumbers */,
-				A54FEA9A1808FD7F004BD309 /* TextKit_LineNumbersTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,15 +179,8 @@
 				A54FEA911808FD7F004BD309 /* Main_iPad.storyboard in Resources */,
 				A54FEA961808FD7F004BD309 /* Images.xcassets in Resources */,
 				A54FEA8E1808FD7F004BD309 /* Main_iPhone.storyboard in Resources */,
+				A54FEABD18090DB2004BD309 /* Sample.rtf in Resources */,
 				A54FEA851808FD7F004BD309 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A54FEA991808FD7F004BD309 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A54FEAA71808FD7F004BD309 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,29 +191,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54FEAB71808FDD1004BD309 /* LineNumberLayoutManager.m in Sources */,
+				A54FEAB41808FDBA004BD309 /* LineNumberTextView.m in Sources */,
+				A54FEABB1809080E004BD309 /* MyView.m in Sources */,
 				A54FEA941808FD7F004BD309 /* ViewController.m in Sources */,
 				A54FEA8B1808FD7F004BD309 /* AppDelegate.m in Sources */,
 				A54FEA871808FD7F004BD309 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A54FEA971808FD7F004BD309 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A54FEAA91808FD7F004BD309 /* TextKit_LineNumbersTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A54FEAA11808FD7F004BD309 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A54FEA761808FD7F004BD309 /* TextKit_LineNumbers */;
-			targetProxy = A54FEAA01808FD7F004BD309 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A54FEA831808FD7F004BD309 /* InfoPlist.strings */ = {
@@ -300,14 +225,6 @@
 				A54FEA901808FD7F004BD309 /* Base */,
 			);
 			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		A54FEAA51808FD7F004BD309 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A54FEAA61808FD7F004BD309 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -396,6 +313,7 @@
 				GCC_PREFIX_HEADER = "TextKit_LineNumbers/TextKit_LineNumbers-Prefix.pch";
 				INFOPLIST_FILE = "TextKit_LineNumbers/TextKit_LineNumbers-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,49 +327,8 @@
 				GCC_PREFIX_HEADER = "TextKit_LineNumbers/TextKit_LineNumbers-Prefix.pch";
 				INFOPLIST_FILE = "TextKit_LineNumbers/TextKit_LineNumbers-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		A54FEAB01808FD7F004BD309 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TextKit_LineNumbers.app/TextKit_LineNumbers";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TextKit_LineNumbers/TextKit_LineNumbers-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "TextKit_LineNumbersTests/TextKit_LineNumbersTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		A54FEAB11808FD7F004BD309 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TextKit_LineNumbers.app/TextKit_LineNumbers";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TextKit_LineNumbers/TextKit_LineNumbers-Prefix.pch";
-				INFOPLIST_FILE = "TextKit_LineNumbersTests/TextKit_LineNumbersTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -472,14 +349,6 @@
 			buildConfigurations = (
 				A54FEAAD1808FD7F004BD309 /* Debug */,
 				A54FEAAE1808FD7F004BD309 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		A54FEAAF1808FD7F004BD309 /* Build configuration list for PBXNativeTarget "TextKit_LineNumbersTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A54FEAB01808FD7F004BD309 /* Debug */,
-				A54FEAB11808FD7F004BD309 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

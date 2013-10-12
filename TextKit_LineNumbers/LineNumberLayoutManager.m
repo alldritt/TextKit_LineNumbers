@@ -1,0 +1,114 @@
+//
+//  LineNumberLayoutManager.m
+//  TextKit_LineNumbers
+//
+//  Created by Mark Alldritt on 2013-10-11.
+//  Copyright (c) 2013 Late Night Software Ltd. All rights reserved.
+//
+
+#import "LineNumberLayoutManager.h"
+
+@interface LineNumberLayoutManager ()
+
+@property (nonatomic) NSUInteger lastParaLocation;
+@property (nonatomic) NSUInteger lastParaNumber;
+
+@end
+
+@implementation LineNumberLayoutManager
+
+- (NSUInteger) _paraNumberForRange:(NSRange) charRange {
+    //  NSString does not provide a means of efficiently determining the paragraph number of a range of text.  This code
+    //  attempts to optimize what would normally be a repeated linear search by keeping track of the last paragraph number
+    //  found and uses that as a starting point for successive paragraph number searches.  This works (mostly) because we
+    //  are generally askes for continguous sequences of paragraph numbers.  Also, this code is called in the course of
+    //  drawing a pageful of text, and so even when moving back, the number of paragraphs to search for is relativly low,
+    //  even for really long bodies of text.
+    
+    if (charRange.location == self.lastParaLocation)
+        return self.lastParaNumber;
+    else if (charRange.location < self.lastParaLocation) {
+        //  We need to look backwards from the last known paragraph for the paragraph range.  This generally happens when
+        //  the text in the UITextView scrolls downward, revaling paragraphs before the ones previously drawn.
+        
+        NSString* s = self.textStorage.string;
+        __block NSUInteger paraNumber = self.lastParaNumber;
+        
+        [s enumerateSubstringsInRange:NSMakeRange(charRange.location, self.lastParaLocation - charRange.location)
+                              options:NSStringEnumerationByParagraphs |
+         NSStringEnumerationSubstringNotRequired |
+         NSStringEnumerationReverse
+                           usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop){
+                               if (enclosingRange.location <= charRange.location) {
+                                   *stop = YES;
+                               }
+                               --paraNumber;
+                           }];
+        
+        self.lastParaLocation = charRange.location;
+        self.lastParaNumber = paraNumber;
+        return paraNumber;
+    }
+    else {
+        //  We need to look forward from the last known paragraph for the paragraph range.  This generally happens when
+        //  the text in the UITextView scrolls upwards, revealing paragraphs that follow the ones previously drawn.
+        
+        NSString* s = self.textStorage.string;
+        __block NSUInteger paraNumber = self.lastParaNumber;
+        
+        [s enumerateSubstringsInRange:NSMakeRange(self.lastParaLocation, charRange.location - self.lastParaLocation)
+                              options:NSStringEnumerationByParagraphs | NSStringEnumerationSubstringNotRequired
+                           usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop){
+                               if (enclosingRange.location >= charRange.location) {
+                                   *stop = YES;
+                               }
+                               ++paraNumber;
+                           }];
+        
+        self.lastParaLocation = charRange.location;
+        self.lastParaNumber = paraNumber;
+        return paraNumber;
+    }
+}
+
+- (void)processEditingForTextStorage:(NSTextStorage *)textStorage edited:(NSTextStorageEditActions)editMask range:(NSRange)newCharRange changeInLength:(NSInteger)delta invalidatedRange:(NSRange)invalidatedCharRange {
+    [super processEditingForTextStorage:textStorage edited:editMask range:newCharRange changeInLength:delta invalidatedRange:invalidatedCharRange];
+    
+    if (invalidatedCharRange.location < self.lastParaLocation) {
+        //  When the backing store is edited ahead the cached paragraph location, invalidate the cache and force a complete
+        //  recalculation.  We cannot be much smarter than this because we don't know how many paragraphs have been deleted
+        //  since the text has already been removed from the backing store.
+        
+        self.lastParaLocation = 0;
+        self.lastParaNumber = 0;
+    }
+}
+
+- (void) drawBackgroundForGlyphRange:(NSRange)glyphsToShow atPoint:(CGPoint)origin {
+    [super drawBackgroundForGlyphRange:glyphsToShow atPoint:origin];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    NSDictionary* atts = @{NSFontAttributeName : [UIFont systemFontOfSize:10.0],
+                           NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    [self enumerateLineFragmentsForGlyphRange:glyphsToShow
+                                   usingBlock:^(CGRect rect, CGRect usedRect, NSTextContainer *textContainer, NSRange glyphRange, BOOL *stop) {
+                                       NSRange charRange = [self characterRangeForGlyphRange:glyphRange actualGlyphRange:nil];
+                                       NSRange paraRange = [self.textStorage.string paragraphRangeForRange:charRange];
+                                       
+                                       //   Only draw line numbers for the paragraph's first line fragment.  Subsiquent fragments are wrapped portions of the paragraph and don't
+                                       //   get the line number.
+                                       if (charRange.location == paraRange.location) {
+                                           CGRect gutterRect = CGRectOffset(CGRectMake(0, rect.origin.y, 40.0, rect.size.height), origin.x, origin.y);
+                                           NSUInteger paraNumber = [self _paraNumberForRange:charRange];
+                                           NSString* ln = [NSString stringWithFormat:@"%ld", (unsigned long) paraNumber + 1];
+                                           CGSize size = [ln sizeWithAttributes:atts];
+                                           
+                                           CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+                                           [ln drawInRect:CGRectOffset(gutterRect, CGRectGetWidth(gutterRect) - 4 - size.width, (CGRectGetHeight(gutterRect) - size.height) / 2.0)
+                                           withAttributes:atts];
+                                       }
+                                   }];
+}
+
+@end

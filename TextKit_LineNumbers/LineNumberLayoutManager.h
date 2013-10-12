@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LineNumberLayoutManager.h
 //  TextKit_LineNumbers
 //
 //  Created by Mark Alldritt on 2013-10-11.
@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyView.h"
 
-
-@interface ViewController : UIViewController
-
-@property (assign, nonatomic) IBOutlet MyView* myView;
+@interface LineNumberLayoutManager : NSLayoutManager
 
 @end
