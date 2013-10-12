@@ -19,17 +19,20 @@
 
 - (NSUInteger) _paraNumberForRange:(NSRange) charRange {
     //  NSString does not provide a means of efficiently determining the paragraph number of a range of text.  This code
-    //  attempts to optimize what would normally be a repeated linear search by keeping track of the last paragraph number
-    //  found and uses that as a starting point for successive paragraph number searches.  This works (mostly) because we
-    //  are generally askes for continguous sequences of paragraph numbers.  Also, this code is called in the course of
-    //  drawing a pageful of text, and so even when moving back, the number of paragraphs to search for is relativly low,
-    //  even for really long bodies of text.
+    //  attempts to optimize what would normally be a series linear searches by keeping track of the last paragraph number
+    //  found and uses that as the starting point for next paragraph number search.  This works (mostly) because we
+    //  are generally asked for continguous increasing sequences of paragraph numbers.  Also, this code is called in the
+    //  course of drawing a pagefull of text, and so even when moving back, the number of paragraphs to search for is
+    //  relativly low, even in really long bodies of text.
+    //
+    //  This all falls down when the user edits the text, and can potentially invalidate the cached paragraph number which
+    //  causes a (potentially lengthy) search from the beginning of the string.
     
     if (charRange.location == self.lastParaLocation)
         return self.lastParaNumber;
     else if (charRange.location < self.lastParaLocation) {
-        //  We need to look backwards from the last known paragraph for the paragraph range.  This generally happens when
-        //  the text in the UITextView scrolls downward, revaling paragraphs before the ones previously drawn.
+        //  We need to look backwards from the last known paragraph for the new paragraph range.  This generally happens
+        //  when the text in the UITextView scrolls downward, revaling paragraphs before/above the ones previously drawn.
         
         NSString* s = self.textStorage.string;
         __block NSUInteger paraNumber = self.lastParaNumber;
@@ -50,8 +53,8 @@
         return paraNumber;
     }
     else {
-        //  We need to look forward from the last known paragraph for the paragraph range.  This generally happens when
-        //  the text in the UITextView scrolls upwards, revealing paragraphs that follow the ones previously drawn.
+        //  We need to look forward from the last known paragraph for the new paragraph range.  This generally happens
+        //  when the text in the UITextView scrolls upwards, revealing paragraphs that follow the ones previously drawn.
         
         NSString* s = self.textStorage.string;
         __block NSUInteger paraNumber = self.lastParaNumber;
