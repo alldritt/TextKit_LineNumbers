@@ -22,6 +22,13 @@
     UIEdgeInsets insets = self.myView.textView.contentInset;
     insets.top += navBarHeight;
     self.myView.textView.contentInset = insets;
+
+    //  Display some sample text to start with
+    NSAttributedString* ats = [[NSAttributedString alloc] initWithFileURL:[NSBundle.mainBundle URLForResource:@"Sample" withExtension:@"rtf"]
+                                                                  options:nil
+                                                       documentAttributes:nil
+                                                                    error:nil];
+    self.myView.textView.attributedText = ats;
 }
 
 @end
