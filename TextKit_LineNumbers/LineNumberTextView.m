@@ -32,7 +32,12 @@
     [ts addLayoutManager:lm];
 
     if ((self = [super initWithFrame:frame textContainer:tc])) {
-        self.contentMode = UIViewContentModeRedraw;
+        self.contentMode = UIViewContentModeRedraw; // cause drawRect: to be called on frame resizing and divice rotation
+        
+        //  I'm finding that this text view is not behaving properly when typing into a new line at the end of the body
+        //  of text.  The cursor is positioned inward, and then jumpts back to the propor position when a character is
+        //  typed.  I'm sure this has something to do with the view's typingAttributes or one of the delegate methods.
+
         //self.typingAttributes = @{NSFontAttributeName : [UIFont systemFontOfSize:16.0],
         //                          NSParagraphStyleAttributeName : [NSParagraphStyle defaultParagraphStyle]};
     }
@@ -40,6 +45,8 @@
 }
 
 - (void) drawRect:(CGRect)rect {
+    
+    //  Drag the line number gutter background.  The line numbers them selves are drawn by LineNumberLayoutManager.
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect bounds = self.bounds;
     
