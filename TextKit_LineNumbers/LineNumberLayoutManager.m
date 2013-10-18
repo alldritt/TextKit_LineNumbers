@@ -108,7 +108,6 @@
                                            NSString* ln = [NSString stringWithFormat:@"%ld", (unsigned long) paraNumber + 1];
                                            CGSize size = [ln sizeWithAttributes:atts];
                                            
-                                           CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
                                            [ln drawInRect:CGRectOffset(gutterRect, CGRectGetWidth(gutterRect) - 4 - size.width, (CGRectGetHeight(gutterRect) - size.height) / 2.0)
                                            withAttributes:atts];
                                        }
