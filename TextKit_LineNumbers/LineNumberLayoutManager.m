@@ -91,10 +91,11 @@
     [super drawBackgroundForGlyphRange:glyphsToShow atPoint:origin];
 
     //  Draw line numbers.  Note that the background for line number gutter is drawn by the LineNumberTextView class.
-    CGContextRef context = UIGraphicsGetCurrentContext();
     NSDictionary* atts = @{NSFontAttributeName : [UIFont systemFontOfSize:10.0],
                            NSForegroundColorAttributeName : [UIColor whiteColor]};
-
+    __block CGRect gutterRect = CGRectZero;
+    __block NSUInteger paraNumber;
+    
     [self enumerateLineFragmentsForGlyphRange:glyphsToShow
                                    usingBlock:^(CGRect rect, CGRect usedRect, NSTextContainer *textContainer, NSRange glyphRange, BOOL *stop) {
                                        NSRange charRange = [self characterRangeForGlyphRange:glyphRange actualGlyphRange:nil];
@@ -103,8 +104,8 @@
                                        //   Only draw line numbers for the paragraph's first line fragment.  Subsiquent fragments are wrapped portions of the paragraph and don't
                                        //   get the line number.
                                        if (charRange.location == paraRange.location) {
-                                           CGRect gutterRect = CGRectOffset(CGRectMake(0, rect.origin.y, 40.0, rect.size.height), origin.x, origin.y);
-                                           NSUInteger paraNumber = [self _paraNumberForRange:charRange];
+                                           gutterRect = CGRectOffset(CGRectMake(0, rect.origin.y, 40.0, rect.size.height), origin.x, origin.y);
+                                           paraNumber = [self _paraNumberForRange:charRange];
                                            NSString* ln = [NSString stringWithFormat:@"%ld", (unsigned long) paraNumber + 1];
                                            CGSize size = [ln sizeWithAttributes:atts];
                                            
@@ -112,6 +113,17 @@
                                            withAttributes:atts];
                                        }
                                    }];
+    
+    //  Deal with the special case of an empty last line where enumerateLineFragmentsForGlyphRange has no line
+    //  fragments to draw.
+    if (NSMaxRange(glyphsToShow) > self.numberOfGlyphs) {
+        NSString* ln = [NSString stringWithFormat:@"%ld", (unsigned long) paraNumber + 2];
+        CGSize size = [ln sizeWithAttributes:atts];
+        
+        gutterRect = CGRectOffset(gutterRect, 0.0, CGRectGetHeight(gutterRect));
+        [ln drawInRect:CGRectOffset(gutterRect, CGRectGetWidth(gutterRect) - 4 - size.width, (CGRectGetHeight(gutterRect) - size.height) / 2.0)
+        withAttributes:atts];
+    }
 }
 
 @end
