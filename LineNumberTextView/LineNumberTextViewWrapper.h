@@ -16,4 +16,16 @@
 
 @property (nonatomic) LineNumberTextView* textView;
 
+/// Defaults to system font, 10pt. Convenience: just forwards to textView.
+@property (nonatomic) IBInspectable UIFont *lineNumberFont;
+
+/// Defaults to gray. Convenience: just forwards to textView.
+@property (nonatomic) IBInspectable UIColor *lineNumberBackgroundColor;
+
+/// Defaults to dark gray. Convenience: just forwards to textView.
+@property (nonatomic) IBInspectable UIColor *lineNumberBorderColor;
+
+/// Defaults to white. Convenience: just forwards to textView.
+@property (nonatomic) IBInspectable UIColor *lineNumberTextColor;
+
 @end

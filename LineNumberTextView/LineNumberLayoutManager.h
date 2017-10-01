@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LineNumberLayoutManager : NSLayoutManager
+/// Defaults to system font, 10pt.
+@property (nonatomic) UIFont *lineNumberFont;
+
+/// Defaults to white.
+@property (nonatomic) UIColor *lineNumberTextColor;
 
 @end

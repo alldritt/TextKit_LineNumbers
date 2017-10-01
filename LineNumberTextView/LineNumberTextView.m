@@ -13,6 +13,7 @@
 @implementation LineNumberTextView
 
 - (id)initWithFrame:(CGRect) frame {
+
     NSTextStorage* ts = [[NSTextStorage alloc] init];
     LineNumberLayoutManager* lm = [[LineNumberLayoutManager alloc] init];
     NSTextContainer* tc = [[NSTextContainer alloc] initWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
@@ -21,7 +22,7 @@
     tc.widthTracksTextView = YES;
 
     //  Exclude the line number gutter from the display area available for text display.
-    tc.exclusionPaths = @[[UIBezierPath bezierPathWithRect:CGRectMake(0.0, 0.0, 40.0, CGFLOAT_MAX)]];
+    tc.exclusionPaths = @[[UIBezierPath bezierPathWithRect:CGRectMake(0.0, 0.0, kLineNumberGutterWidth, CGFLOAT_MAX)]];
 
     [lm addTextContainer:tc];
     [ts addLayoutManager:lm];
@@ -35,6 +36,8 @@
 
         //self.typingAttributes = @{NSFontAttributeName : [UIFont systemFontOfSize:16.0],
         //                          NSParagraphStyleAttributeName : [NSParagraphStyle defaultParagraphStyle]};
+        _lineNumberBackgroundColor = [UIColor grayColor];
+        _lineNumberBorderColor = [UIColor darkGrayColor];
     }
     return self;
 }
@@ -45,14 +48,57 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect bounds = self.bounds;
     
-    CGContextSetFillColorWithColor(context, [UIColor grayColor].CGColor);
+    CGContextSetFillColorWithColor(context, _lineNumberBackgroundColor.CGColor);
     CGContextFillRect(context, CGRectMake(bounds.origin.x, bounds.origin.y, kLineNumberGutterWidth, bounds.size.height));
     
-    CGContextSetStrokeColorWithColor(context, [UIColor darkGrayColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, _lineNumberBorderColor.CGColor);
     CGContextSetLineWidth(context, 0.5);
     CGContextStrokeRect(context, CGRectMake(bounds.origin.x + 39.5, bounds.origin.y, 0.5, CGRectGetHeight(bounds)));
     
     [super drawRect:rect];
 }
+
+- (UIFont *)lineNumberFont {
+    LineNumberLayoutManager* lm = (LineNumberLayoutManager*) self.layoutManager;
+    return lm.lineNumberFont;
+}
+
+- (void)setLineNumberFont:(UIFont *)lineNumberFont {
+    LineNumberLayoutManager* lm = (LineNumberLayoutManager*) self.layoutManager;
+    if (![lm.lineNumberFont isEqual:lineNumberFont]) {
+        lm.lineNumberFont = lineNumberFont;
+        [self setNeedsDisplay];
+    }
+}
+
+- (UIColor *)lineNumberTextColor {
+    LineNumberLayoutManager* lm = (LineNumberLayoutManager*) self.layoutManager;
+    return lm.lineNumberTextColor;
+}
+
+- (void)setLineNumberTextColor:(UIColor *)lineNumberTextColor {
+    LineNumberLayoutManager* lm = (LineNumberLayoutManager*) self.layoutManager;
+    if (![lm.lineNumberTextColor isEqual:lineNumberTextColor]) {
+        lm.lineNumberTextColor = lineNumberTextColor;
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setLineNumberBackgroundColor:(UIColor *)lineNumberBackgroundColor {
+    if (![_lineNumberBackgroundColor isEqual:lineNumberBackgroundColor]) {
+        _lineNumberBackgroundColor = lineNumberBackgroundColor;
+        [self setNeedsDisplay];
+    }
+}
+
+
+- (void)setLineNumberBorderColor:(UIColor *)lineNumberBorderColor {
+    if (![_lineNumberBorderColor isEqual:lineNumberBorderColor]) {
+        _lineNumberBorderColor = lineNumberBorderColor;
+        [self setNeedsDisplay];
+    }
+}
+
+
 
 @end

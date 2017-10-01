@@ -13,6 +13,18 @@
 
 @interface LineNumberTextView : UITextView
 
+/// Defaults to system font, 10pt.
+@property (nonatomic) UIFont *lineNumberFont;
+
+/// Defaults to gray.
+@property (nonatomic) UIColor *lineNumberBackgroundColor;
+
+/// Defaults to dark gray.
+@property (nonatomic) UIColor *lineNumberBorderColor;
+
+/// Defaults to white.
+@property (nonatomic) UIColor *lineNumberTextColor;
+
 - (id)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
 @end

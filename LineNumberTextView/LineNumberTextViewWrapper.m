@@ -26,4 +26,36 @@
     return self;
 }
 
+- (UIFont *)lineNumberFont {
+    return self.textView.lineNumberFont;
+}
+
+- (void)setLineNumberFont:(UIFont *)lineNumberFont {
+    self.textView.lineNumberFont = lineNumberFont;
+}
+
+- (UIColor *)lineNumberBackgroundColor {
+    return self.textView.lineNumberBackgroundColor;
+}
+
+- (void)setLineNumberBackgroundColor:(UIColor *)lineNumberBackgroundColor {
+    self.textView.lineNumberBackgroundColor = lineNumberBackgroundColor;
+}
+
+- (UIColor *)lineNumberBorderColor {
+    return self.textView.lineNumberBorderColor;
+}
+
+- (void)setLineNumberBorderColor:(UIColor *)lineNumberBorderColor {
+    self.textView.lineNumberBorderColor = lineNumberBorderColor;
+}
+
+- (UIColor *)lineNumberTextColor {
+    return self.textView.lineNumberTextColor;
+}
+
+- (void)setLineNumberTextColor:(UIColor *)lineNumberTextColor {
+    self.textView.lineNumberTextColor = lineNumberTextColor;
+}
+
 @end
