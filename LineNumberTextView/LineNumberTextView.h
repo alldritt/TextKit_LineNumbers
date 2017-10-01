@@ -1,5 +1,5 @@
 //
-//  MyView.h
+//  LineNumberTextView.h
 //  TextKit_LineNumbers
 //
 //  Created by Mark Alldritt on 2013-10-11.
@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LineNumberTextView.h"
 
 
-@interface MyView : UIView
+#define kLineNumberGutterWidth      40.0
 
-@property (nonatomic) LineNumberTextView* textView;
+@interface LineNumberTextView : UITextView
+
+- (id)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
 @end
