@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  TextKit_LineNumbers_swift
 //
-//  Created by david on 9/30/17.
-//  Copyright © 2017 David Phillip Oster. All rights reserved.
+//  Copyright © 2017 David Phillip Oster. MIT License.
 //
 
 import UIKit
