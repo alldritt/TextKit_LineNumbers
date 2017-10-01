@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyView.h"
+#import "LineNumberTextViewWrapper.h"
 
 
 @interface ViewController : UIViewController
 
-@property (assign, nonatomic) IBOutlet MyView* myView;
+@property (assign, nonatomic) IBOutlet LineNumberTextViewWrapper* myView;
 
 @end

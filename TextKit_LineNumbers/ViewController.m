@@ -25,7 +25,7 @@
 
     //  Display some sample text to start with
     NSAttributedString* ats = [[NSAttributedString alloc] initWithFileURL:[NSBundle.mainBundle URLForResource:@"Sample" withExtension:@"rtf"]
-                                                                  options:nil
+                                                                  options:@{}
                                                        documentAttributes:nil
                                                                     error:nil];
     self.myView.textView.attributedText = ats;

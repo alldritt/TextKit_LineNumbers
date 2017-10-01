@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63AEF2E41F8065BB00CC2F67 /* LineNumberLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AEF2DF1F8065BB00CC2F67 /* LineNumberLayoutManager.m */; };
+		63AEF2E51F8065BB00CC2F67 /* LineNumberTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AEF2E11F8065BB00CC2F67 /* LineNumberTextView.m */; };
+		63AEF2E61F8065BB00CC2F67 /* LineNumberTextViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AEF2E31F8065BB00CC2F67 /* LineNumberTextViewWrapper.m */; };
 		A54FEA7B1808FD7F004BD309 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54FEA7A1808FD7F004BD309 /* Foundation.framework */; };
 		A54FEA7D1808FD7F004BD309 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54FEA7C1808FD7F004BD309 /* CoreGraphics.framework */; };
 		A54FEA7F1808FD7F004BD309 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54FEA7E1808FD7F004BD309 /* UIKit.framework */; };
@@ -17,13 +20,16 @@
 		A54FEA911808FD7F004BD309 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54FEA8F1808FD7F004BD309 /* Main_iPad.storyboard */; };
 		A54FEA941808FD7F004BD309 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54FEA931808FD7F004BD309 /* ViewController.m */; };
 		A54FEA961808FD7F004BD309 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54FEA951808FD7F004BD309 /* Images.xcassets */; };
-		A54FEAB41808FDBA004BD309 /* LineNumberTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54FEAB31808FDBA004BD309 /* LineNumberTextView.m */; };
-		A54FEAB71808FDD1004BD309 /* LineNumberLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A54FEAB61808FDD1004BD309 /* LineNumberLayoutManager.m */; };
-		A54FEABB1809080E004BD309 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54FEABA1809080E004BD309 /* MyView.m */; };
 		A54FEABD18090DB2004BD309 /* Sample.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A54FEABC18090DB2004BD309 /* Sample.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63AEF2DE1F8065BB00CC2F67 /* LineNumberLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineNumberLayoutManager.h; sourceTree = "<group>"; };
+		63AEF2DF1F8065BB00CC2F67 /* LineNumberLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineNumberLayoutManager.m; sourceTree = "<group>"; };
+		63AEF2E01F8065BB00CC2F67 /* LineNumberTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineNumberTextView.h; sourceTree = "<group>"; };
+		63AEF2E11F8065BB00CC2F67 /* LineNumberTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineNumberTextView.m; sourceTree = "<group>"; };
+		63AEF2E21F8065BB00CC2F67 /* LineNumberTextViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineNumberTextViewWrapper.h; sourceTree = "<group>"; };
+		63AEF2E31F8065BB00CC2F67 /* LineNumberTextViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineNumberTextViewWrapper.m; sourceTree = "<group>"; };
 		A54FEA771808FD7F004BD309 /* TextKit_LineNumbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextKit_LineNumbers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54FEA7A1808FD7F004BD309 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A54FEA7C1808FD7F004BD309 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -40,12 +46,6 @@
 		A54FEA931808FD7F004BD309 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A54FEA951808FD7F004BD309 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A54FEA9C1808FD7F004BD309 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A54FEAB21808FDBA004BD309 /* LineNumberTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineNumberTextView.h; sourceTree = "<group>"; };
-		A54FEAB31808FDBA004BD309 /* LineNumberTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineNumberTextView.m; sourceTree = "<group>"; };
-		A54FEAB51808FDD1004BD309 /* LineNumberLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineNumberLayoutManager.h; sourceTree = "<group>"; };
-		A54FEAB61808FDD1004BD309 /* LineNumberLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineNumberLayoutManager.m; sourceTree = "<group>"; };
-		A54FEAB91809080E004BD309 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
-		A54FEABA1809080E004BD309 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		A54FEABC18090DB2004BD309 /* Sample.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Sample.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +63,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63AEF2DD1F8065BB00CC2F67 /* LineNumberTextView */ = {
+			isa = PBXGroup;
+			children = (
+				63AEF2DE1F8065BB00CC2F67 /* LineNumberLayoutManager.h */,
+				63AEF2DF1F8065BB00CC2F67 /* LineNumberLayoutManager.m */,
+				63AEF2E01F8065BB00CC2F67 /* LineNumberTextView.h */,
+				63AEF2E11F8065BB00CC2F67 /* LineNumberTextView.m */,
+				63AEF2E21F8065BB00CC2F67 /* LineNumberTextViewWrapper.h */,
+				63AEF2E31F8065BB00CC2F67 /* LineNumberTextViewWrapper.m */,
+			);
+			name = LineNumberTextView;
+			path = ../LineNumberTextView;
+			sourceTree = "<group>";
+		};
 		A54FEA6E1808FD7F004BD309 = {
 			isa = PBXGroup;
 			children = (
@@ -100,13 +114,8 @@
 				A54FEA8A1808FD7F004BD309 /* AppDelegate.m */,
 				A54FEA921808FD7F004BD309 /* ViewController.h */,
 				A54FEA931808FD7F004BD309 /* ViewController.m */,
-				A54FEAB91809080E004BD309 /* MyView.h */,
-				A54FEABA1809080E004BD309 /* MyView.m */,
-				A54FEAB21808FDBA004BD309 /* LineNumberTextView.h */,
-				A54FEAB31808FDBA004BD309 /* LineNumberTextView.m */,
-				A54FEAB51808FDD1004BD309 /* LineNumberLayoutManager.h */,
-				A54FEAB61808FDD1004BD309 /* LineNumberLayoutManager.m */,
 				A54FEABC18090DB2004BD309 /* Sample.rtf */,
+				63AEF2DD1F8065BB00CC2F67 /* LineNumberTextView */,
 				A54FEA951808FD7F004BD309 /* Images.xcassets */,
 				A54FEA811808FD7F004BD309 /* Supporting Files */,
 			);
@@ -150,7 +159,7 @@
 		A54FEA6F1808FD7F004BD309 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Late Night Software Ltd.";
 			};
 			buildConfigurationList = A54FEA721808FD7F004BD309 /* Build configuration list for PBXProject "TextKit_LineNumbers" */;
@@ -191,11 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A54FEAB71808FDD1004BD309 /* LineNumberLayoutManager.m in Sources */,
-				A54FEAB41808FDBA004BD309 /* LineNumberTextView.m in Sources */,
-				A54FEABB1809080E004BD309 /* MyView.m in Sources */,
+				63AEF2E61F8065BB00CC2F67 /* LineNumberTextViewWrapper.m in Sources */,
 				A54FEA941808FD7F004BD309 /* ViewController.m in Sources */,
+				63AEF2E51F8065BB00CC2F67 /* LineNumberTextView.m in Sources */,
 				A54FEA8B1808FD7F004BD309 /* AppDelegate.m in Sources */,
+				63AEF2E41F8065BB00CC2F67 /* LineNumberLayoutManager.m in Sources */,
 				A54FEA871808FD7F004BD309 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,13 +252,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -262,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -282,20 +297,25 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -310,6 +330,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextKit_LineNumbers/TextKit_LineNumbers-Prefix.pch";
 				INFOPLIST_FILE = "TextKit_LineNumbers/TextKit_LineNumbers-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.latenightsw.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -324,6 +345,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextKit_LineNumbers/TextKit_LineNumbers-Prefix.pch";
 				INFOPLIST_FILE = "TextKit_LineNumbers/TextKit_LineNumbers-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.latenightsw.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
