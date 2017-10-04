@@ -17,6 +17,23 @@
 
 @implementation LineNumberLayoutManager
 
+- (instancetype)init  {
+    self = [super init];
+    [self initializeLineNumberLayoutManager];
+    return self;
+}
+
+- (nullable instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    [self initializeLineNumberLayoutManager];
+    return self;
+}
+
+- (void)initializeLineNumberLayoutManager {
+    _lineNumberFont = [UIFont systemFontOfSize:10.0];
+    _lineNumberTextColor = [UIColor whiteColor];
+}
+
 - (NSUInteger) _paraNumberForRange:(NSRange) charRange {
     //  NSString does not provide a means of efficiently determining the paragraph number of a range of text.  This code
     //  attempts to optimize what would normally be a series linear searches by keeping track of the last paragraph number
@@ -91,8 +108,8 @@
     [super drawBackgroundForGlyphRange:glyphsToShow atPoint:origin];
 
     //  Draw line numbers.  Note that the background for line number gutter is drawn by the LineNumberTextView class.
-    NSDictionary* atts = @{NSFontAttributeName : [UIFont systemFontOfSize:10.0],
-                           NSForegroundColorAttributeName : [UIColor whiteColor]};
+    NSDictionary* atts = @{NSFontAttributeName : _lineNumberFont,
+                           NSForegroundColorAttributeName : _lineNumberTextColor};
     __block CGRect gutterRect = CGRectZero;
     __block NSUInteger paraNumber;
     
